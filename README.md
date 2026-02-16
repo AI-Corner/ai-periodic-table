@@ -6,6 +6,8 @@
 
 > A visual, interactive tool for understanding AI system architectures - from simple chatbots to complex multi-agent systems.
 
+## 🌐 [**View Live Demo →**](https://ai-corner.github.io/ai-periodic-table/)
+
 ![AI Periodic Table Preview](./preview.png)
 
 ## 🌟 What is This?
