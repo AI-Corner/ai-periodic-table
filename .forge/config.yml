@@ -1,0 +1,12 @@
+# Copilot Forge - Project Configuration
+project:
+  name: "ai-periodic-table"
+  description: "Interactive AI Periodic Table for understanding AI system architectures."
+  
+stack:
+  frontends:
+    - react
+    - vite
+  backends: []
+  deploy:
+    - github-pages

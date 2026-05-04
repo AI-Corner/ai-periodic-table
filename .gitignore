@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Copilot Forge worktrees
+.worktrees/
+
+# Copilot Forge per-project counters
+.forge/.next-bug
+.forge/.next-lesson
+.forge/.next-req
+
+# VS Code local settings
+.vscode/settings.local.json
