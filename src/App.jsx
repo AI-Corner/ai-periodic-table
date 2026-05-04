@@ -1,15 +1,50 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './index.css'
 import PeriodicTable from './PeriodicTable'
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <div className="app-container">
-      <header style={{ marginBottom: '60px' }}>
-        <h1>AI Periodic Table</h1>
-        <p style={{ fontSize: '1.2em', color: '#94a3b8' }}>
-          Organizing the Chaos of LLMs, RAG, and AI Agents
-        </p>
+      <header style={{ marginBottom: '60px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div>
+          <h1 style={{ marginTop: 0, marginBottom: '0.2em' }}>AI Periodic Table</h1>
+          <p style={{ fontSize: '1.2em', color: 'var(--text-color)', opacity: 0.7, margin: 0 }}>
+            Organizing the Chaos of LLMs, RAG, and AI Agents
+          </p>
+        </div>
+        <button 
+          onClick={toggleTheme} 
+          aria-label="Toggle Theme"
+          style={{
+            background: 'var(--card-bg)',
+            border: '1px solid var(--border-color)',
+            color: 'var(--text-color)',
+            padding: '10px 15px',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '1.2em',
+            transition: 'background-color 0.3s, color 0.3s'
+          }}
+        >
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
       </header>
 
       <main>
