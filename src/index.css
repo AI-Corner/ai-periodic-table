@@ -1,7 +1,7 @@
 :root {
   --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --bg-color: #0f172a;
-  --text-color: #e2e8f0;
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
   --primary-color: #646cff;
 
   --color-reactive: #ff6b6b;
@@ -9,6 +9,16 @@
   --color-orchestration: #ffe66d;
   --color-validation: #a66dff;
   --color-models: #45b7d1;
+  
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -18,6 +28,7 @@ body {
   color: var(--text-color);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #root {
@@ -47,9 +58,9 @@ h1 {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--card-bg);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
 }
@@ -64,8 +75,8 @@ h1 {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
 }
 
 .element:hover {
